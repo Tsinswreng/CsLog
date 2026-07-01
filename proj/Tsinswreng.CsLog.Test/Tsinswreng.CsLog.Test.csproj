@@ -1,11 +1,17 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
 		<OutputType>Exe</OutputType>
+		<PublishAot>true</PublishAot>
 	</PropertyGroup>
-	
+
 	<ItemGroup>
 		<PackageReference Include="Tsinswreng.CsTreeTest" Version="0.1.1-alpha" />
+		<PackageReference Include="Tsinswreng.CsCore" Version="0.0.1-alpha" />
+		<PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="10.0.8" />
+		<PackageReference Include="Microsoft.Extensions.Logging" Version="10.0.0" />
+		<PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="10.0.1" />
+		<PackageReference Include="Microsoft.Extensions.Logging.Console" Version="10.0.0" />
 	</ItemGroup>
 
 </Project>
