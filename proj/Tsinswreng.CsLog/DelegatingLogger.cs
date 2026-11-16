@@ -34,15 +34,15 @@ public class DelegatingLogger : IDelegatingLogger {
 	}
 
 
-	public void Log<TState>(LogLevel logLevel, EventId eventId, TState state, Exception? exception, Func<TState, Exception?, string> formatter) {
+	public virtual void Log<TState>(LogLevel logLevel, EventId eventId, TState state, Exception? exception, Func<TState, Exception?, string> formatter) {
 		InnerLogger?.Log(logLevel, eventId, state, exception, formatter);
 	}
 
-	public bool IsEnabled(LogLevel logLevel) {
+	public virtual bool IsEnabled(LogLevel logLevel) {
 		return InnerLogger?.IsEnabled(logLevel) ?? false;
 	}
 
-	public IDisposable? BeginScope<TState>(TState state) where TState : notnull {
+	public virtual IDisposable? BeginScope<TState>(TState state) where TState : notnull {
 		return InnerLogger?.BeginScope(state);
 	}
 }
